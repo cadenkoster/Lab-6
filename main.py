@@ -22,6 +22,23 @@ def encode(password):
         if i == "0":
             final = final + '3'
     return final
+
+def decoder(password):
+    final = ""
+    for i in password:
+        i = int(i)
+        if i >= 3:
+            i = i - 3
+            final = final + str(i)
+        elif i < 3:
+            if i == 2:
+                final = final + '9'
+            elif i == 1:
+                final = final + '8'
+            elif i == 0:
+                final = final + '7'
+    return final
+
 def main():
     while True:
         print("Menu")
